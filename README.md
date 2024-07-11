@@ -13,3 +13,6 @@ I find it an amazing shell for both MacOS and Arch Linux.
 
 3. Kitty terminal emulator:
 An amazing terminal! I use it instead of the boring standard MacOS one.
+
+4. Zsh shell:
+Honestly, on MacOS I much prefer the ZSH shell. Oh-my-ZSH and Oh-my-posh are my daily drivers.
