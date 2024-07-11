@@ -1,0 +1,30 @@
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+yabai -m config layout bsp
+
+# Space labels
+# yabai -m space 1 --label main
+# yabai -m space 2 --label web
+# yabai -m space 4 --label chat
+# yabai -m space 5 --label terminal
+# yabai -m space 5 --label multimedia
+
+# yabai -m rule --add app="^Finder$" space=main
+# yabai -m rule --add app="^Min$" space=web
+# yabai -m rule --add app="^Discord$" space=chat
+# yabai -m rule -add app="^WhatsApp$" space=chat
+# yabai -m rule --add app="^kitty$" space=terminal
+# yabai -m rule --add app="^Safari$" space=multimedia
+
+# Window rules
+yabai -m rule --add app="^(Calculator|System Preferences|System Settings|Archive Utility|Finder|Weather|Preview|Numi|Preferences
+Settings)$" manage=off
+
+# Useful optional stuff
+yabai -m config focus_follows_mouse autofocus
+yabai -m config window_shadow float
+yabai -m config window_gap  5
+# yabai -m config window_border_width 1
+# yabai -m config active_window_border_color  0xBF999999
+# yabai -m config window_opacity on
+# yabai -m config normal_window_opacity 0.9
