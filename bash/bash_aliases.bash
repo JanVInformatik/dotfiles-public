@@ -13,7 +13,6 @@ alias ms="mutt -F ~/.config/mutt/account1.gmail"
 alias mutt='neomutt'
 alias muttrc="cd ~/.config/mutt/;$EDITOR ~/.config/mutt/account1.gmail"
 alias mw="mutt -F ~/.config/mutt/account2.gmail"
-alias nani="echo 'Omae Wa Mou Shindeiru'"
 alias pac='sudo pacman -Syu'
 alias pc='sudo pacman'
 alias q='exit'
