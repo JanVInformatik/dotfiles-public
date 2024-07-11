@@ -11,4 +11,5 @@ A system monitoring CLI. You could argue it's a GUI with some additional feature
 2. Fish shell:
 I find it an amazing shell for both MacOS and Arch Linux.
 
-
+3. Kitty terminal emulator:
+An amazing terminal! I use it instead of the boring standard MacOS one.
