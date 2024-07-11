@@ -19,3 +19,8 @@ Honestly, on MacOS I much prefer the ZSH shell. Oh-my-ZSH and Oh-my-posh are my 
 
 5. Yabai as Window Manager and Skhd as keyboard hotkey deamon:
 A somewhat common choice on MacOS. My window management is pretty neat and yabai now!
+
+# About my Arch Linux setup:
+
+I use Arch Linux with Hyprland as my WM. Additionally, the Hyprdots have proven to come with quite well pre-made configurations.
+I only (manually) remove the animated RGB frames of the windows in the OS since I much rather prefer to get not distracted by them.
