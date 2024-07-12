@@ -1,8 +1,3 @@
-if has("termguicolors")
-  set termguicolors
-endif
-
-set background=dark
 " STATUS LINE ------------------------------------------------------------ {{{
 
 " Clear status line when vimrc is reloaded.
@@ -20,11 +15,14 @@ set statusline+=\ ascii:\ %b\ hex:\ 0x%B\ row:\ %l\ col:\ %c\ percent:\ %p%%
 " Show the status on the second to last line.
 set laststatus=2
 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+
 " }}}
 
 " " MAPPINGS --------------------------------------------------------------- {{{
 
-" Leader to space:
+" Space as leader key:
 nnoremap <SPACE> <Nop>
 let mapleader=" "
 
@@ -58,13 +56,9 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+
+" Believe me, backspace makes more sense that way.
 set backspace=indent,eol,start
-" Resize split windows using arrow keys by pressing:
-" CTRL+UP, CTRL+DOWN, CTRL+LEFT, or CTRL+RIGHT.
-noremap <c-up> <c-w>+
-noremap <c-down> <c-w>-
-noremap <c-left> <c-w>>
-noremap <c-right> <c-w><
 
 " NERDTree specific mappings.
 " Map the leader + e key to toggle NERDTree open and close.
@@ -79,7 +73,7 @@ let NERDTreeIgnore=['\.git$', '\.jpg$', '\.mp4$', '\.ogg$', '\.iso$', '\.pdf$', 
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'ayu-theme/ayu-vim'
+Plug 'ayu-theme/ayu-vim' "optional; not recommended when using my Kitty config - they conflict; Simply use it without this theme if you decide to use my Kitty config too.
 
 Plug 'vim-syntastic/syntastic'
 
@@ -148,19 +142,22 @@ smap <silent> <C-j> <C-R>=UltiSnips#ExpandSnippet()<CR>
 " Make clipboard silent
 let g:system_copy_silent = 1
 
-" Floaterm keybinds to make life easier
-" Configuration example
+" Floaterm keybinds to make life easier.
 let g:floaterm_keymap_new    = '<F1>'
 let g:floaterm_keymap_toggle = '<F2>' 
 let g:floaterm_keymap_kill   = '<Leader>k'
 
-" which key display the binds
+" The plugin 'which-key' can display binds. Therefore, I set it up that it
+" does so when pressing the leader. All keybinds associated with the leader
+" bind will appear accordingly.
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 set timeoutlen=1000
 
-" fzf maps
+" FuzzyFinder (fzf) bindings.
 nnoremap <silent> <Space>f :Files<CR>
 
+" Some Syntastic (Syntax Highlightng plugin) options that I chose
+" deliberately.
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -173,32 +170,29 @@ let g:syntastic_check_on_wq = 0
 " Enable verbose logging for debugging
 let g:test#verbose = 1
 
-" 'mute' vim
+" 'mute' Vim. The bell ringing was really annoying.
 set noerrorbells
 set visualbell
 set t_vb=
 
-" Start interactive EasyAlign in visual mode (e.g. vipga)
+" Start interactive EasyAlign in visual mode (e.g. vipga).
 xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
+" Some general stuff.
 set termguicolors
 let ayucolor ="dark"
 colorscheme ayu
 
-highlight ALEVirtualTextError guifg=red
-highlight ALEVirtualTextStyleWarning guifg=pink
-highlight link ALEVirtualTextError Error
-
-" Disable compatibility with vi which can cause unexpected issues.
+" Disable compatibility with Vi which can cause unexpected issues.
 set nocompatible
 
-" Enable type file detection. Vim will be able to try to detect the type of file in use.
+" Enable type file detection. Vim will be able to detect the type of file in use.
 filetype on
 
-" Enable plugins and load plugin for the detected file type.
+" Enable plugins and load plugins for the detected file type.
 filetype plugin on
 
 " Load an indent file for the detected file type.
@@ -213,8 +207,8 @@ set number
 " Set shift width to 4 spaces.
 set shiftwidth=4
 
-" Set tab width to 4 columns.
-set tabstop=4
+" Set tab width to 2 columns.
+set tabstop=2
 
 " Use space characters instead of tabs.
 set expandtab
@@ -251,24 +245,24 @@ set showmatch
 set hlsearch
 
 " Set the commands to save in history default number is 20.
-set history=1000
+set history=100
 
 " Enable auto completion menu after pressing TAB.
 set wildmenu
 
-" Make wildmenu behave like similar to Bash completion.
+" Make wildmenu behave similar to Bash completion.
 set wildmode=list:longest
 
-" There are certain files that we would never want to edit with Vim.
+" There are filetypes that should not be edited with Vim.
 " Wildmenu will ignore files with these extensions.
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
-" Just to ensure kitty is running properly with VIM:
+" Just to ensure kitty is running properly with Vim:
 " Mouse support
 set mouse=a
 set ttymouse=sgr
 set balloonevalterm
-" Styled and colored underline support
+" Styled and colored underline support.
 let &t_AU = "\e[58:5:%dm"
 let &t_8u = "\e[58:2:%lu:%lu:%lum"
 let &t_Us = "\e[4:2m"
@@ -276,20 +270,20 @@ let &t_Cs = "\e[4:3m"
 let &t_ds = "\e[4:4m"
 let &t_Ds = "\e[4:5m"
 let &t_Ce = "\e[4:0m"
-" Strikethrough
+" Strikethrough.
 let &t_Ts = "\e[9m"
 let &t_Te = "\e[29m"
-" Truecolor support
+" Truecolor support.
 let &t_8f = "\e[38:2:%lu:%lu:%lum"
 let &t_8b = "\e[48:2:%lu:%lu:%lum"
 let &t_RF = "\e]10;?\e\\"
 let &t_RB = "\e]11;?\e\\"
-" Bracketed paste
+" Bracketed paste.
 let &t_BE = "\e[?2004h"
 let &t_BD = "\e[?2004l"
 let &t_PS = "\e[200~"
 let &t_PE = "\e[201~"
-" Cursor control
+" Cursor control.
 let &t_RC = "\e[?12$p"
 let &t_SH = "\e[%d q"
 let &t_RS = "\eP$q q\e\\"
@@ -297,16 +291,16 @@ let &t_SI = "\e[5 q"
 let &t_SR = "\e[3 q"
 let &t_EI = "\e[1 q"
 let &t_VS = "\e[?12l"
-" Focus tracking
+" Focus tracking.
 let &t_fe = "\e[?1004h"
 let &t_fd = "\e[?1004l"
 execute "set <FocusGained>=\<Esc>[I"
 execute "set <FocusLost>=\<Esc>[O"
-" Window title
+" Window title.
 let &t_ST = "\e[22;2t"
 let &t_RT = "\e[23;2t"
 
-" vim hardcodes background color erase even if the terminfo file does
+" Vim hardcodes background color erase even if the terminfo file does
 " not contain bce. This causes incorrect background rendering when
 " using a color theme with a background color in terminals such as
 " kitty that do not support background color erase.
