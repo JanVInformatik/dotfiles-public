@@ -1,11 +1,8 @@
-" Some general stuff:
-
 if has("termguicolors")
   set termguicolors
 endif
 
 set background=dark
-
 " STATUS LINE ------------------------------------------------------------ {{{
 
 " Clear status line when vimrc is reloaded.
@@ -49,7 +46,7 @@ nnoremap N Nzz
 " Yank from cursor to the end of line.
 nnoremap Y y$
 
-" Mapping some f keys to compile / interprete Python, Haskell and Java files.
+" Mapping some f keys to compile / interprete python, ghc and java files
 nnoremap <f5> :w <CR>:!clear <CR>:!python3 % <CR>
 nnoremap <f6> :w <CR>:!clear <CR>:!ghc % <CR>:!./%:r <CR>
 nnoremap <f7> :w <CR>:!clear <CR>:!java % <CR>:!./%:r <CR>
@@ -61,10 +58,7 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
-
-" Backspace makes more sense that way.
 set backspace=indent,eol,start
-
 " Resize split windows using arrow keys by pressing:
 " CTRL+UP, CTRL+DOWN, CTRL+LEFT, or CTRL+RIGHT.
 noremap <c-up> <c-w>+
