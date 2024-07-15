@@ -50,13 +50,6 @@ nnoremap <f6> :w <CR>:!clear <CR>:!ghc % <CR>:!./%:r <CR>
 nnoremap <f7> :w <CR>:!clear <CR>:!java % <CR>:!./%:r <CR>
 nnoremap <f8> :w <CR>:!clear <CR>:!gcc % <CR>:!./a.out <CR>
 
-" You can split the window in Vim by typing :split or :vsplit.
-" Navigate the split view easier by pressing CTRL+j, CTRL+k, CTRL+h, or CTRL+l.
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
-
 " Believe me, backspace makes more sense that way.
 set backspace=indent,eol,start
 
@@ -72,6 +65,12 @@ let NERDTreeIgnore=['\.git$', '\.jpg$', '\.mp4$', '\.ogg$', '\.iso$', '\.pdf$', 
 " PLUGINS ---------------------------------------------------------------- {{{
 
 call plug#begin('~/.vim/plugged')
+
+Plug 'tribela/vim-transparent'
+
+Plug 'ghifarit53/tokyonight-vim'
+
+Plug 'sheerun/vim-polyglot'
 
 Plug 'ayu-theme/ayu-vim' "optional; not recommended when using my Kitty config - they conflict; Simply use it without this theme if you decide to use my Kitty config too.
 
@@ -125,12 +124,23 @@ call plug#end()
 
 " }}}
 
+" Make fzf transparent too:
+":echo g:fzf_colors
+" transparent the gutter
+let $FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS .. ' --color=gutter:-1'
+
+" Exemption: This plugin takes quite some disk space. Hence PlugClean is quite
+" slow. I recommend using this "frozen" option to not let VimPlug scan it at
+" all. However, you can also leave this commented out.
+let g:plug_frozen = ['ycm-core/YouCompleteMe']
+
 " Floaterm autoclose: 0 - dont close; 1 - Close if job exits normally; 2 -
 " always close
 let g:floaterm_autoclose=1
 
 " Set airline themes.
-let g:airline_theme='distinguished'
+" let g:airline_theme = "tokyonight"
+let g:airline_theme = "distinguished"
 
 " Set the snippet directories (optional)
 let g:UltiSnipsSnippetDirectories = ['UltiSnips', 'my_snippets']
@@ -183,8 +193,15 @@ nmap ga <Plug>(EasyAlign)
 
 " Some general stuff.
 set termguicolors
-let ayucolor ="dark"
-colorscheme ayu
+ let ayucolor ="dark"
+ colorscheme ayu
+" let g:tokyonight_style = 'night' " available: night, storm
+" let g:tokyonight_enable_italic = 1
+
+" colorscheme tokyonight
+
+highlight Normal ctermbg=black
+highlight nonText ctermbg=black
 
 " Disable compatibility with Vi which can cause unexpected issues.
 set nocompatible
