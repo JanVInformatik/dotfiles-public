@@ -325,38 +325,44 @@ let &t_RT = "\e[23;2t"
 " kitty that do not support background color erase.
 let &t_ut=''
 
-
-"Edit your own startify config:
-" set the bookmarks to your liking.
 " Startify config: {{{
 
 let g:startify_bookmarks = [
             \ { '6': '~/.config/' },
-            \ { '8': '~/Dokus/Informatik/Java'}
+            \ { '7': '~/Dokus/Informatik/fruehstudiumHaskell'},
+            \ { '8': '~/Dokus/Informatik/Java'},
+            \ { '9': '~/Dokus/Informatik/dotfiles-public'}
             \ ]
 
-" let g:ascii = [
-"       \ '        __',
-"       \ '.--.--.|__|.--------.',
-"       \ '|  |  ||  ||        |',
-"       \ ' \___/ |__||__|__|__|',
-"       \ ''
-"       \]
-
 let g:ascii = [
-			\'░▒█░░▒█░█▀▀░█░░█▀▄░▄▀▀▄░█▀▄▀█░█▀▀░░░▀▀█▀▀░▄▀▀▄░░░▒█░░▒█░░▀░░█▀▄▀█░░░▒█░░▒█░▄▀▀▄░█▀▀▄░█░░█▀▄',
-			\'░▒█▒█▒█░█▀▀░█░░█░░░█░░█░█░▀░█░█▀▀░░░░▒█░░░█░░█░░░░▒█▒█░░░█▀░█░▀░█░░░▒█▒█▒█░█░░█░█▄▄▀░█░░█░█',
-			\'░▒▀▄▀▄▀░▀▀▀░▀▀░▀▀▀░░▀▀░░▀░░▒▀░▀▀▀░░░░▒█░░░░▀▀░░░░░░▀▄▀░░▀▀▀░▀░░▒▀░░░▒▀▄▀▄▀░░▀▀░░▀░▀▀░▀▀░▀▀░',
-			\'',
-			\]
+       \ '        __',
+       \ '.--.--.|__|.--------.',
+       \ '|  |  ||  ||        |',
+       \ ' \___/ |__||__|__|__|',
+       \ ''
+       \]
+
 let g:startify_lists = [
           \ { 'type': 'files',     'header': ['   MRU']            },
           \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
           \ { 'type': 'commands',  'header': ['   Commands']       },
           \ ]
+
+let g:asciiToo = [
+    \ '  ____________________________________________',
+    \ ' /                                            \',
+    \ '|  "Microsoft is not evil, they just make      |',
+    \ '|   really crappy operating systems."          |',
+    \ '|                       - Linus Torvalds       |',
+    \ ' \                                            /',
+    \ ' --------------------------------------------',
+    \ '        \     /\_/\  ',
+    \ '         \   ( o.o )',
+    \ '          \   > ^ < ',
+    \ ]
+
 let g:startify_change_to_dir = 1
-let g:startify_fortune_use_unicode = 1
-let g:startify_custom_header = g:ascii + startify#fortune#boxed()
+let g:startify_custom_header = g:ascii + g:asciiToo
 " 'Most Recent Files' number
 let g:startify_files_number = 11
 " Update session automatically as you exit vim
