@@ -351,9 +351,9 @@ let g:startify_lists = [
 let g:asciiToo = [
     \ '  ____________________________________________',
     \ ' /                                            \',
-    \ '|  "Microsoft is not evil, they just make      |',
-    \ '|   really crappy operating systems."          |',
-    \ '|                       - Linus Torvalds       |',
+    \ '|  "In the beginning you always want re-       |',
+    \ '|   sults. In the end all you want             |',
+    \ '|   is control."        - Internet dude.       |',
     \ ' \                                            /',
     \ ' --------------------------------------------',
     \ '        \     /\_/\  ',
