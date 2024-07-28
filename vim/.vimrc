@@ -329,9 +329,8 @@ let &t_ut=''
 
 let g:startify_bookmarks = [
             \ { '6': '~/.config/' },
-            \ { '7': '~/Dokus/Informatik/fruehstudiumHaskell'},
-            \ { '8': '~/Dokus/Informatik/Java'},
-            \ { '9': '~/Dokus/Informatik/dotfiles-public'}
+            \ { '7': '~/Dokus/Informatik/dotfiles-public'},
+            \ { '8': '~/'}
             \ ]
 
 let g:ascii = [
@@ -351,9 +350,9 @@ let g:startify_lists = [
 let g:asciiToo = [
     \ '  ____________________________________________',
     \ ' /                                            \',
-    \ '|  "In the beginning you always want re-       |',
-    \ '|   sults. In the end all you want             |',
-    \ '|   is control."        - Internet dude.       |',
+    \ '| "It be like that sometimes."                 |',
+    \ '|                                              |',
+    \ '|                - Dude on the internet.       |',
     \ ' \                                            /',
     \ ' --------------------------------------------',
     \ '        \     /\_/\  ',
