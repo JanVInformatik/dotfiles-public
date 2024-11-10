@@ -18,7 +18,7 @@ An amazing terminal! I use it instead of the boring standard MacOS one.
 Honestly, on MacOS I much prefer the ZSH shell. Oh-my-ZSH and Oh-my-posh are my daily drivers.
 
 5. Yabai as Window Manager and Skhd as keyboard hotkey deamon:
-A somewhat common choice on MacOS. My window management is pretty neat and yabai now!
+A viable choice on MacOS. My window management is pretty neat because of those awesome projects!
 
 # About my Arch Linux setup:
 
