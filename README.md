@@ -24,3 +24,8 @@ A viable choice on MacOS. My window management is pretty neat because of those a
 
 I use Arch Linux with Hyprland as my WM. Additionally, the Hyprdots have proven to come with quite well pre-made configurations.
 I only (manually) remove the animated RGB frames of the windows in the OS since I much rather prefer to get not distracted by them.
+
+# About my Ubuntu / Mint setup
+
+Alternatively, I made a new SSD that is able to dual-boot Ubuntu and Mint. 
+That being said, they both use i3 as Window Manager, featuring Vim-like keybinds to move the windows around, resize them and etc.
